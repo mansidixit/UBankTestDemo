@@ -4,8 +4,8 @@ module.exports = defineConfig({
   e2e: {
     chromeWebSecurity:false,
     video : true,
-    viewportHeight : 960,
-    viewportWidth:1536 ,
+    viewportHeight : 1504,
+    viewportWidth:2256 ,
     defaultCommandTimeout: 5000,
     reporter: 'mochawesome',
     reporterOptions: {

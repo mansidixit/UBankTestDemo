@@ -11,7 +11,8 @@ import appData from '../fixtures/data.json';
 Cypress.Commands.add('selectFromMenu', (menuName, subMenuName) => {
     cy.get('nav#navigation ul>li>button').contains(menuName).trigger('mouseover')
     cy.get('nav#navigation ul>li>div').contains(subMenuName).click();
-    cy.get('h1[data-automation="product-listing-title"]').contains(subMenuName)
+    cy.wait(appData.longWaitTime);
+    cy.get('h1[data-automation="product-listing-title"] > span').contains(subMenuName)
 })
 
 
@@ -43,10 +44,7 @@ Cypress.Commands.add('getAPetId', () => {
         url: appData.apiURL+'findByStatus?status=available',
     }).then((resp) => {
         expect(resp.status).to.eq(200)
-        // var respBody = resp.body
          var petID = resp.body[0].id;
-        //  cy.log(" resp body ="+JSON.stringify(resp.body))
-        //  cy.log(" id ="+petID)
          return petID;
     })
 

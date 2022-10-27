@@ -2,13 +2,15 @@
 
 import Products from '../../support/pageobjects/Products';
 import FilterBar from '../../support/pageobjects/FilterBar';
+import appData from '../../fixtures/data.json';
+
 describe('Verify Pet Store API response', () => {
-var petID = '9223372036854775351';
-var petName = 'birdie'
+var petID;
+var petName = appData.petName;
     it('Verify Find Pet by Id', () => {
         cy.getAPetId()
             .then(($id) => {
-                cy.log(" PetID :" + petID);
+                petID = $id;
                 cy.findAPetById(petID,true,200)
                     .then(($resp) => {
                         cy.log("**** Request Successful ***** ")

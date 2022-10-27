@@ -12,23 +12,23 @@ describe('Verify Price Filters', () => {
     products = new Products();
   })
 
-  it('Filter Kids Books By Price under 25', () => {
+  it('Filter Kids Books By Sale of 20% off', () => {
     cy.selectFromMenu('Toys', 'Kids Book')
-    filter.filterBy('Price', 'Under 25');
+    filter.filterBy('Sales & Offers', '20% off');
     products.verifyPrice('<',0,25);
   })
 
   it('Filter M.A.C BeautyProducts By Price between 25 to 50', () => {
     cy.selectFromMenu('Beauty', 'M.A.C')
-    filter.filterBy('Price', '25 to 50');
-    products.verifyPrice('<=>',25,50);
+    filter.filterBy('Product Category', 'Makeup');
+    products.verifyPrice('<=>',10,200);
 
-  })
+   })
 
   it('Filter Christmas TechGifts By Price Over 500', () => {
     cy.selectFromMenu('Christmas', 'Tech & Gadget Gifts')
-    filter.filterBy('Price', 'Over 500');
-    products.verifyPrice('>',0,500);
+    filter.filterBy('Sales & Offers', '10% off');
+    products.verifyPrice('>',0,50);
 
   })
 })

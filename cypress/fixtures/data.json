@@ -1,8 +1,8 @@
 {
-  "shortWaitTime" : 2000,
-  "mediumWaitTime" : 3500,
-  "longWaitTime" : 5000,
-  "apiURL" : "https://petstore.swagger.io/v2/pet/"
-
-
+  "shortWaitTime": 2000,
+  "mediumWaitTime": 3500,
+  "longWaitTime": 5000,
+  "apiURL": "https://petstore.swagger.io/v2/pet/",
+  "petID": "9223372036854247232",
+  "petName": "birdie"
 }
